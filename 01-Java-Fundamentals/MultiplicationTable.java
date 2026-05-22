@@ -8,6 +8,6 @@ public class MultiplicationTable {
 
             System.out.println(num + " x " + i + " = " + (num * i));
         }
-
+        sc.close();
     }
 }

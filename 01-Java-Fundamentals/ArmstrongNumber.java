@@ -21,6 +21,6 @@ public class ArmstrongNumber {
         else {
             System.out.println("Not Armstrong");
         }
-
+        sc.close();
     }
 }

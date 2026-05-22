@@ -19,6 +19,6 @@ public class FibonacciSeries {
             first = second;
             second = next;
         }
-
+        sc.close();
     }
 }
