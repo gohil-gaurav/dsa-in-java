@@ -1,6 +1,6 @@
 public class StairCase {
     public static void main(String[] args) {
-        int n = 5;
+        int n = 6;
         int stars = 2;
 
         for (int i = 1; i <= n; i++) {
