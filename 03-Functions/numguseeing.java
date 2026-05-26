@@ -24,7 +24,7 @@ public class numguseeing {
             }
 
         }
-
+        sc.close();
 
     }
     public static void main(String[] args) {

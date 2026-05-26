@@ -19,6 +19,6 @@ public class fibonacciseries {
         int n = sc.nextInt();
         System.out.println();
         fibo(n);
-
+        sc.close();
     }
 }

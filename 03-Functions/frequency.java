@@ -20,5 +20,6 @@ public class frequency {
         int dig = sc.nextInt();
         int res = fre(n,dig);
         System.out.println(res);
+        sc.close();
     }
 }
