@@ -4,6 +4,7 @@ public class DecimalToBinary {
         int power = 1;
         while (n>0) {
             int lastDigit = n%2;
+
             binary += lastDigit*power;
             power*=10;
             n/=2;
@@ -11,7 +12,7 @@ public class DecimalToBinary {
         return binary;
     }
     public static void main(String[] args) {
-        int n = 10;
+        int n = 24;
         System.out.println(decimalToBinary(n));
     }
 }

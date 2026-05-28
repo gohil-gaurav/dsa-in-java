@@ -11,7 +11,7 @@ public class BinaryToDecimal {
         return decimal;
     }
     public static void main(String[] args) {
-        int n = 100;
+        int n = 10010;
         System.out.println(binaryToDecimal(n));
     }
 }
