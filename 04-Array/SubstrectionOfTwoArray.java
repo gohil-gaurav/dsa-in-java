@@ -1,31 +1,37 @@
+import java.util.*;
 public class SubstrectionOfTwoArray {
-    public static void main(String[] args) {
-        int[] arr1 = { 10, 20, 30 };
-        int[] arr2 = { 2, 4, 6 };
-
-        int[] result = subtractArrays(arr1, arr2);
-        printArray(result);
-    }
-
-    public static int[] subtractArrays(int[] a, int[] b) {
-        if (a.length != b.length) {
-            throw new IllegalArgumentException("Arrays must have the same length.");
-        }
-
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; i++) {
-            result[i] = a[i] - b[i];
+    public static int[] subtractArray(int[] arr1, int[] arr2) {
+        int[] result = new int[arr1.length];
+        int borrow = 0;
+        for (int i = arr1.length - 1; i >= 0; i--) {
+            int a = arr1[i] - borrow;
+            int b = arr2[i];
+            if (a < b) {
+                a = a + 10;
+                borrow = 1;
+            } else {
+                borrow = 0;
+            }
+            result[i] = a - b;
         }
         return result;
     }
 
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(" ");
-            }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr1 = new int[n];
+        int[] arr2 = new int[n];
+        int[] res = new int[n];
+        for(int i=0;i<n;i++){
+            arr1[i]= sc.nextInt();
         }
-        System.out.println();
+        for(int i=0;i<n;i++){
+            arr2[i]= sc.nextInt();
+        }
+        res = subtractArray(arr1, arr2);
+        for(int i =0;i<n;i++){
+            System.out.println(res[i]);
+        }
     }
 }

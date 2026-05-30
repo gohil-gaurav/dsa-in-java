@@ -13,7 +13,7 @@ public class EvenDistance {
                 j++;
             }
         }
-        int distance = Integer.MAX_VALUE;   
+        int distance = Integer.MAX_VALUE;
         if (size < 2) {
             return -1;
         }
