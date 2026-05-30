@@ -1,31 +1,45 @@
+import java.util.*;
 public class SummationOfTwoArray {
-    public static void main(String[] args) {
-        int[] arr1 = { 1, 2, 3, 4 };
-        int[] arr2 = { 4, 3, 2, 1 };
+    public static int[] sumArray(int[] arr1, int[] arr2) {
+        int n = arr1.length;
+        int[] result = new int[n + 1];
 
-        int[] result = addArrays(arr1, arr2);
-        printArray(result);
-    }
+        int carry = 0;
 
-    public static int[] addArrays(int[] a, int[] b) {
-        if (a.length != b.length) {
-            throw new IllegalArgumentException("Arrays must have the same length.");
+        for (int i = n - 1; i >= 0; i--) {
+            int sum = arr1[i] + arr2[i] + carry;
+            result[i + 1] = sum % 10;
+            carry = sum / 10;
         }
 
-        int[] result = new int[a.length];
-        for (int i = 0; i < a.length; i++) {
-            result[i] = a[i] + b[i];
-        }
+        result[0] = carry;
+
         return result;
     }
 
-    public static void printArray(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]);
-            if (i < arr.length - 1) {
-                System.out.print(" ");
-            }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int[] arr1 = new int[n];
+        int[] arr2 = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr1[i] = sc.nextInt();
         }
-        System.out.println();
+
+        for (int i = 0; i < n; i++) {
+            arr2[i] = sc.nextInt();
+        }
+
+        int[] res = sumArray(arr1, arr2);
+
+        for (int i = 0; i < n; i++) {
+            System.out.println(res[i]);
+        }
+
     }
 }
