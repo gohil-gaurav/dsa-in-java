@@ -17,7 +17,6 @@ public class SummationOfTwoArray {
         return result;
     }
 
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -37,9 +36,10 @@ public class SummationOfTwoArray {
 
         int[] res = sumArray(arr1, arr2);
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < res.length; i++) {
             System.out.println(res[i]);
         }
 
+        sc.close();
     }
 }
